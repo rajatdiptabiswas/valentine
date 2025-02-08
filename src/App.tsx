@@ -47,7 +47,7 @@ function App() {
       )}
 
       {step === 2 && (
-        <div className="flex flex-col gap-8 text-center min-w-2xl mx-auto p-6">
+        <div className="flex flex-col gap-8 text-center mx-auto p-6">
           <h1 className="text-4xl font-extrabold text-pink-600 lowercase">Where would you like to go? 🗺️</h1>
           <div className="relative w-full flex justify-center items-center p-2">
             <button
@@ -56,7 +56,7 @@ function App() {
             >
               ◀
             </button>
-            <p className="text-2xl font-semibold text-center lowercase">{places[placeIndex]}</p>
+            <p className="px-10 text-2xl font-semibold text-center lowercase">{places[placeIndex]}</p>
             <button
               className="absolute right-0 bg-pink-500 text-white w-10 h-10 rounded-full shadow-lg hover:bg-pink-400 transition duration-300"
               onClick={() => { updateIndex(setPlaceIndex, places, "next"); }}
@@ -82,7 +82,7 @@ function App() {
       )}
 
       {step === 3 && (
-        <div className="flex flex-col gap-8 text-center min-w-2xl mx-auto p-6">
+        <div className="flex flex-col gap-8 text-center mx-auto p-6">
           <h1 className="text-4xl font-extrabold text-pink-600 lowercase">Where would you like to dine? 🍽️</h1>
           <div className="relative w-full flex justify-center items-center p-2">
             <button
@@ -91,7 +91,7 @@ function App() {
             >
               ◀
             </button>
-            <p className="text-2xl font-semibold text-center lowercase">{restaurants[restaurantIndex]}</p>
+            <p className="px-10 text-2xl font-semibold text-center lowercase">{restaurants[restaurantIndex]}</p>
             <button
               className="absolute right-0 bg-pink-500 text-white w-10 h-10 rounded-full shadow-lg hover:bg-pink-400 transition duration-300"
               onClick={() => { updateIndex(setRestaurantIndex, restaurants, "next"); }}
@@ -99,7 +99,7 @@ function App() {
               ▶
             </button>
           </div>
-          <div className="flex justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
             <a
               href="https://www.google.com/maps/@/data=!3m1!4b1!4m3!11m2!2ssK6gz_uez9wHnRVb9XpXkQ67F5fv5w!3e2?entry=tts&g_ep=EgoyMDI1MDIwNC4wKgBIAVAD"
               target="_blank"
@@ -128,7 +128,7 @@ function App() {
       )}
 
       {step === 4 && (
-        <div className="flex flex-col gap-8 text-center min-w-2xl mx-auto p-6">
+        <div className="flex flex-col gap-8 text-center mx-auto p-6">
           <h1 className="text-4xl font-extrabold text-pink-600 lowercase">What do you want to do later? 🏡</h1>
           <div className="relative w-full flex justify-center items-center p-2">
             <button
@@ -137,7 +137,7 @@ function App() {
             >
               ◀
             </button>
-            <p className="text-2xl font-semibold text-center lowercase">{activities[activityIndex]}</p>
+            <p className="px-10 text-2xl font-semibold text-center lowercase">{activities[activityIndex]}</p>
             <button
               className="absolute right-0 bg-pink-500 text-white w-10 h-10 rounded-full shadow-lg hover:bg-pink-400 transition duration-300"
               onClick={() => { updateIndex(setActivityIndex, activities, "next"); }}
