@@ -20,15 +20,20 @@ const updateIndex = (
 
 const App = () => {
   const [step, setStep] = useState(1);
-  const [activityIndex, setActivityIndex] = useState(0);
   const [placeIndex, setPlaceIndex] = useState(0);
   const [restaurantIndex, setRestaurantIndex] = useState(0);
+  const [activityIndex, setActivityIndex] = useState(0);
+
+  const valentineQuestion = "Will you be my Valentine? 💖";
+  const placeQuestion = "Where would you like to go? 🗺️";
+  const restaurantQuestion = "Where would you like to dine? 🍽️";
+  const activityQuestion = "What do you want to do later? 🏡";
 
   return (
     <div className="flex flex-col items-center justify-center h-screen p-8 bg-gradient-to-r from-rose-200 via-pink-200 to-purple-200 text-rose-800 font-sans">
       {step === 1 && (
         <div className="flex flex-col gap-8 text-center max-w-2xl mx-auto p-6">
-          <h1 className="text-4xl font-extrabold text-pink-600 lowercase"> Will you be my Valentine? 💖</h1>
+          <h1 className="text-4xl font-extrabold text-pink-600 lowercase">{valentineQuestion}</h1>
           <div className="flex justify-center gap-4">
             <button
               className="bg-pink-500 text-white px-6 py-3 rounded-xl shadow-lg hover:bg-pink-400 transition duration-300 lowercase"
@@ -38,7 +43,7 @@ const App = () => {
             </button>
             <button
               className="bg-gray-500 text-white px-6 py-3 rounded-xl shadow-lg hover:bg-gray-400 transition duration-300 lowercase"
-              onClick={() => alert("Are you sure? 😭".toLowerCase())}
+              onClick={() => alert("Are you sure? 🥹".toLowerCase())}
             >
               No
             </button>
@@ -48,7 +53,7 @@ const App = () => {
 
       {step === 2 && (
         <div className="flex flex-col gap-8 text-center mx-auto p-6">
-          <h1 className="text-4xl font-extrabold text-pink-600 lowercase">Where would you like to go? 🗺️</h1>
+          <h1 className="text-4xl font-extrabold text-pink-600 lowercase">{placeQuestion}</h1>
           <div className="relative w-full flex justify-center items-center p-2">
             <button
               className="absolute left-0 bg-pink-500 text-white w-10 h-10 rounded-full shadow-lg hover:bg-pink-400 transition duration-300"
@@ -83,7 +88,7 @@ const App = () => {
 
       {step === 3 && (
         <div className="flex flex-col gap-8 text-center mx-auto p-6">
-          <h1 className="text-4xl font-extrabold text-pink-600 lowercase">Where would you like to dine? 🍽️</h1>
+          <h1 className="text-4xl font-extrabold text-pink-600 lowercase">{restaurantQuestion}</h1>
           <div className="relative w-full flex justify-center items-center p-2">
             <button
               className="absolute left-0 bg-pink-500 text-white w-10 h-10 rounded-full shadow-lg hover:bg-pink-400 transition duration-300"
@@ -129,7 +134,7 @@ const App = () => {
 
       {step === 4 && (
         <div className="flex flex-col gap-8 text-center mx-auto p-6">
-          <h1 className="text-4xl font-extrabold text-pink-600 lowercase">What do you want to do later? 🏡</h1>
+          <h1 className="text-4xl font-extrabold text-pink-600 lowercase">{activityQuestion}</h1>
           <div className="relative w-full flex justify-center items-center p-2">
             <button
               className="absolute left-0 bg-pink-500 text-white w-10 h-10 rounded-full shadow-lg hover:bg-pink-400 transition duration-300"
@@ -145,7 +150,7 @@ const App = () => {
               ▶
             </button>
           </div>
-          <div className="flex justify-center">
+          <div className="flex flex-wrap justify-center gap-4">
             <button
               className="bg-pink-500 text-white px-6 py-3 rounded-xl shadow-lg hover:bg-pink-400 transition duration-300 w-32 lowercase"
               onClick={() => { updateIndex(setActivityIndex, activities, "random"); }}
