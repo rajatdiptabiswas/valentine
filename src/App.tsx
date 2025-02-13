@@ -2,11 +2,11 @@ import { useState } from 'react';
 import './App.css';
 import { activities, places, restaurants } from './Data'
 
-function updateIndex(
+const updateIndex = (
   setIndex: React.Dispatch<React.SetStateAction<number>>,
   array: string[],
   direction: "next" | "previous" | "random"
-) {
+) => {
   setIndex((prev) => {
     if (direction === "next") {
       return (prev + 1) % array.length;
@@ -18,7 +18,7 @@ function updateIndex(
   });
 }
 
-function App() {
+const App = () => {
   const [step, setStep] = useState(1);
   const [activityIndex, setActivityIndex] = useState(0);
   const [placeIndex, setPlaceIndex] = useState(0);
