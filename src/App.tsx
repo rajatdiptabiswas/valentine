@@ -29,6 +29,21 @@ const App = () => {
   const restaurantQuestion = "Where would you like to dine? 🍽️";
   const activityQuestion = "What do you want to do later? 🏡";
 
+
+  const generateEmailLink = () => {
+    const selectedPlace = places[placeIndex];
+    const selectedRestaurant = restaurants[restaurantIndex];
+    const selectedActivity = activities[activityIndex];
+
+    const email = "rdbiswas97@gmail.com";
+    const emailSubject = "💌";
+    const emailBody = encodeURIComponent(
+      `${placeQuestion}: ${selectedPlace}\n${restaurantQuestion}: ${selectedRestaurant}\n${activityQuestion}: ${selectedActivity}`
+    );
+
+    return `mailto:${email}?subject=${emailSubject}&body=${emailBody}`;
+  };
+
   return (
     <div className="flex flex-col items-center justify-center h-screen p-8 bg-gradient-to-r from-rose-200 via-pink-200 to-purple-200 text-rose-800 font-sans">
       {step === 1 && (
@@ -157,6 +172,17 @@ const App = () => {
             >
               Random
             </button>
+            <a
+              href={generateEmailLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button
+                className="bg-pink-500 text-white px-6 py-3 rounded-xl shadow-lg hover:bg-pink-400 transition duration-300 w-32 lowercase"
+              >
+                Send 💌
+              </button>
+            </a>
           </div>
         </div>
       )}
