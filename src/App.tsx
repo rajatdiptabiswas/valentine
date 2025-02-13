@@ -35,13 +35,14 @@ const App = () => {
     const selectedRestaurant = restaurants[restaurantIndex];
     const selectedActivity = activities[activityIndex];
 
-    const email = "rdbiswas97@gmail.com";
+    const emailAddress = "rdbiswas97";
+    const emailDomain = "gmail.com"
     const emailSubject = "💌";
     const emailBody = encodeURIComponent(
       `${placeQuestion}: ${selectedPlace}\n${restaurantQuestion}: ${selectedRestaurant}\n${activityQuestion}: ${selectedActivity}`
     );
 
-    return `mailto:${email}?subject=${emailSubject}&body=${emailBody}`;
+    return `mailto:${emailAddress}@${emailDomain}?subject=${emailSubject}&body=${emailBody}`;
   };
 
   return (
